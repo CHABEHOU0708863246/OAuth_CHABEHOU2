@@ -1,0 +1,20 @@
+<table>
+  <tr>
+    <td>
+      <button (click)="login()" *ngIf="!isloggedIn()">Se connecter</button>
+    </td>
+    <td>
+      <button (click)="logout()" *ngIf="isloggedIn()">Se deconnecter</button>
+    </td>
+  </tr>
+</table>
+
+<div *ngIf="isloggedIn()">
+  <h3>Vous êtes connecté</h3>
+</div>
+
+<div *ngIf="!isloggedIn()">
+  <h3>Vous ne pouvez pas accéder à cette page</h3>
+</div>
+
+<router-outlet></router-outlet>
